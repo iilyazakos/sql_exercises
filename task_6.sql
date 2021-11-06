@@ -2,10 +2,8 @@
 Определить товары, которые покупали более 1 раза
 */
 
-
-SELECT good_name
-FROM Goods
-JOIN Payments
-    ON Goods.good_id=Payments.good
-GROUP BY good
-HAVING COUNT(good) > 1;
+select good_name
+from Goods g
+join Payments p on g.good_id = p.good
+group by good
+having count(good) > 1;
